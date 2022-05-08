@@ -16,11 +16,11 @@ function displayOff() {
     op2.style.display = 'none'
 }
 function youLost() {
-    if (sum == 100) {
+    if (sum >= 100) {
         sumNumber.innerHTML = '<h1 id="number">You lost!</h1>'}
 }
 function youWon() {
-    if (sum == 100) {
+    if (sum >= 100) {
         sumNumber.innerHTML = '<h1 id="number">You won!</h1>'}
 }
 
