@@ -1,4 +1,4 @@
-var sum = 0
+var sum = 90
 
 const sumText = document.getElementsByClassName('sumText')
 
@@ -16,12 +16,12 @@ function displayOff() {
     op2.style.display = 'none'
 }
 function youLost() {
-    if (sum >= 100) {
-        sumNumber.innerHTML = '<h1 id="number">You lost!</h1>'}
+    displayOff()
+    sumNumber.innerHTML = '<h1 id="number">You lost!</h1>'
 }
 function youWon() {
-    if (sum >= 100) {
-        sumNumber.innerHTML = '<h1 id="number">You won!</h1>'}
+    displayOff()
+    sumNumber.innerHTML = '<h1 id="number">You won!</h1>'
 }
 
 // Algorithm for the bot
@@ -31,7 +31,9 @@ function algorithm(remainder) {switch (remainder) {
         console.log(`bot add 2 and sum = ${sum}`)
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        youLost()
+        if (sum == 100) {
+            youLost()
+        }
         break
     case 1:
         var randomAdd = Math.ceil(Math.random()*2)
@@ -39,14 +41,18 @@ function algorithm(remainder) {switch (remainder) {
         console.log(`bot add ${randomAdd} and sum = ${sum}`)
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        youLost()
+        if (sum == 100) {
+            youLost()
+        }
         break
     case 0:
         sum = sum + 1
         console.log(`bot add 1 and sum = ${sum}`)
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        youLost()
+        if (sum == 100) {
+            youLost()
+        }
         break}}
 
 // Add one 
@@ -54,8 +60,10 @@ function addOne() {
     sum++
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
+    if (sum == 100) {
+         youWon()
+    }
     displayOff()
-    youWon()
     setTimeout(function() {algorithm(remainder)} ,1000)
 }
 
@@ -64,8 +72,10 @@ function addTwo(){
     sum = sum + 2
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
+    if (sum == 100) {
+        youWon()
+   }
     displayOff()
-    youWon()
     setTimeout(function() {algorithm(remainder)} ,1000)
 }
 
