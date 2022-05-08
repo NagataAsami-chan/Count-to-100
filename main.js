@@ -1,4 +1,4 @@
-var sum = 90
+var sum = 0
 
 const sumText = document.getElementsByClassName('sumText')
 
