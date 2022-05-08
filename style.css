@@ -40,6 +40,7 @@
 #op2:hover {
     background-color: #008CBA;
     color: rgb(0, 0, 0);
+    
 }
 
 #oprestart {
@@ -56,9 +57,12 @@
     transition-duration: 0.4s;
 }
 
+
+
 #oprestart:hover {
     background-color: #f44336;
     color: rgb(0, 0, 0);
+    
 }
 
 .content {
@@ -86,3 +90,31 @@ body {
 #title {
     text-align: center;
 }
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none ;
+}
+
+.navbar {
+    background-color: white;
+    width: 100%;
+    height: 40px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#settings {
+    border: none; 
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /*dim the background*/
+    display: none;
+  }

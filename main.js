@@ -8,12 +8,16 @@ const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
 
 function displayOn() {
-    op1.style.display = 'inline'
-    op2.style.display = 'inline'
+    op1.disabled = false
+    op2.disabled = false
+    op1.classList.remove('disabled')
+    op2.classList.remove('disabled')
 }
 function displayOff() {
-    op1.style.display = 'none'
-    op2.style.display = 'none'
+    op1.disabled = true
+    op2.disabled = true
+    op1.classList.add('disabled')
+    op2.classList.add('disabled')
 }
 function youLost() {
     displayOff()
