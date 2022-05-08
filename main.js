@@ -61,7 +61,8 @@ function addOne() {
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
     if (sum == 100) {
-         youWon()
+        youWon()
+        return
     }
     displayOff()
     setTimeout(function() {algorithm(remainder)} ,1000)
@@ -74,6 +75,7 @@ function addTwo(){
     sumNumber.innerHTML = `${sum}`
     if (sum == 100) {
         youWon()
+        return
    }
     displayOff()
     setTimeout(function() {algorithm(remainder)} ,1000)
