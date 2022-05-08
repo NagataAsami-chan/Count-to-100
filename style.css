@@ -62,7 +62,7 @@
 }
 
 .content {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255);
     width: max(50%, 300px);
     height: 400px;
     position: fixed;
@@ -70,6 +70,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 8px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 body {
