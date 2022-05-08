@@ -81,6 +81,7 @@ function addTwo(){
 
 // Restart the game
 function restart() {
+    displayOn()
     sum = 0
     sumNumber.innerHTML = `
     ${sum}
