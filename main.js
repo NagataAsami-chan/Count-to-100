@@ -73,7 +73,7 @@ function addOne() {
     sumNumber.innerHTML = `${sum}`
     logs.classList.add('visible')
     logs.classList.remove('fade-out')
-    if (sum == 100) {
+    if (sum >= 100) {
         youWon()
         return
     }
@@ -109,6 +109,20 @@ function restart() {
 // function timer() {
 //     var  = timer.value
 // }
-
+document.addEventListener("keydown", function(e) {
+    // console.log(e.keyCode)
+    e.key.toString()
+    if (!e.repeat)
+    console.log(e.key);
+    if (e.key.toString() == 1){
+        addOne()
+        e.preventDefault();
+    }
+    if (e.key.toString() == 2){
+        addTwo()
+        e.preventDefault();
+    }
+    
+})
 
 document.getElementById('number').value = sum;
