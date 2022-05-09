@@ -7,6 +7,7 @@ var sumNumber = document.getElementById('number')
 const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
 const timer = document.getElementById('timer')
+const logs = document.getElementById('logs')
 function displayOn() {
     op1.disabled = false
     op2.disabled = false
@@ -32,7 +33,9 @@ function youWon() {
 function algorithm(remainder) {switch (remainder) {
     case 2:
         sum = sum + 2
-        console.log(`bot add 2 and sum = ${sum}`)
+        logs.innerHTML = `<div id="logs">Bot add 2!</div>`
+        logs.classList.remove('visible')
+        logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
         if (sum == 100) {
@@ -42,7 +45,9 @@ function algorithm(remainder) {switch (remainder) {
     case 1:
         var randomAdd = Math.ceil(Math.random()*2)
         sum = sum + randomAdd
-        console.log(`bot add ${randomAdd} and sum = ${sum}`)
+        logs.innerHTML = `<div id="logs">Bot add ${randomAdd}!</div>`
+        logs.classList.remove('visible')
+        logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
         if (sum == 100) {
@@ -51,7 +56,9 @@ function algorithm(remainder) {switch (remainder) {
         break
     case 0:
         sum = sum + 1
-        console.log(`bot add 1 and sum = ${sum}`)
+        logs.innerHTML = `<div id="logs">Bot add 1!</div>`
+        logs.classList.remove('visible')
+        logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
         if (sum == 100) {
@@ -64,6 +71,8 @@ function addOne() {
     sum++
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
+    logs.classList.add('visible')
+    logs.classList.remove('fade-out')
     if (sum == 100) {
         youWon()
         return
@@ -77,6 +86,8 @@ function addTwo(){
     sum = sum + 2
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
+    logs.classList.add('visible')
+    logs.classList.remove('fade-out')
     if (sum >= 100) {
         youWon()
         return

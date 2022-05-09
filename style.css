@@ -1,6 +1,13 @@
 #number {
     font-size: 80px;
     text-align: center;
+    margin-bottom: 16px;
+}
+
+#logs {
+    text-align: center;
+    font-family: "consolas", "monaco", "monospace";
+    margin-bottom: 32px;
 }
 .ops {
     text-align: center;
@@ -104,6 +111,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 #settings {
     border: none; 
 }
@@ -117,4 +125,15 @@ body {
     z-index: 10;
     background-color: rgba(0,0,0,0.5); /*dim the background*/
     display: none;
-  }
+}
+
+.fade-out {
+	visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0s linear;
+}
