@@ -6,7 +6,7 @@ var sumNumber = document.getElementById('number')
 
 const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
-
+const timer = document.getElementById('timer')
 function displayOn() {
     op1.disabled = false
     op2.disabled = false
@@ -69,7 +69,7 @@ function addOne() {
         return
     }
     displayOff()
-    setTimeout(function() {algorithm(remainder)} ,1000)
+    setTimeout(function() {algorithm(remainder)} ,200)
 }
 
 // Add two
@@ -82,7 +82,7 @@ function addTwo(){
         return
    }
     displayOff()
-    setTimeout(function() {algorithm(remainder)} ,1000)
+    setTimeout(function() {algorithm(remainder)} ,200)
 }
 
 // Restart the game
@@ -95,6 +95,9 @@ function restart() {
     console.log('restart!')
 }
 
+// function timer() {
+//     var  = timer.value
+// }
 
 
 document.getElementById('number').value = sum;
