@@ -77,7 +77,7 @@ function addTwo(){
     sum = sum + 2
     var remainder = sum % 3
     sumNumber.innerHTML = `${sum}`
-    if (sum == 100) {
+    if (sum >= 100) {
         youWon()
         return
    }
