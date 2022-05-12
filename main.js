@@ -128,7 +128,7 @@ document.addEventListener("keydown", function(e) {
 
 function coolDown() {
     coolDown = true
-    setTimedOut(function() {coolDown = false}, 2000)
+    setTimedOut(function() {coolDown = false}, 200)
 }
 
 document.getElementById('number').value = sum;
