@@ -109,20 +109,26 @@ function restart() {
 // function timer() {
 //     var  = timer.value
 // }
+
 document.addEventListener("keydown", function(e) {
     // console.log(e.keyCode)
     e.key.toString()
     if (!e.repeat)
     console.log(e.key);
-    if (e.key.toString() == 1){
+    if (!coolDown && e.key.toString() == 1){
         addOne()
-        e.preventDefault();
+        coolDown()
     }
-    if (e.key.toString() == 2){
+    if (!coolDown && e.key.toString() == 2){
         addTwo()
-        e.preventDefault();
+        coolDown()
     }
     
 })
+
+function coolDown() {
+    coolDown = true
+    setTimedOut(function() {coolDown = false}, 2000)
+}
 
 document.getElementById('number').value = sum;
