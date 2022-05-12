@@ -1,8 +1,6 @@
 var sum = 0
-
-const sumText = document.getElementsByClassName('sumText')
-
 var sumNumber = document.getElementById('number')
+var coolDown = false
 
 const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
