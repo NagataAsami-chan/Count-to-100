@@ -1,11 +1,12 @@
 var sum = 0
 var sumNumber = document.getElementById('number')
-var coolDown = false
 
 const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
 const timer = document.getElementById('timer')
 const logs = document.getElementById('logs')
+const setting = document.getElementById('settings')
+const overlay = document.getElementById('overlay')
 function displayOn() {
     op1.disabled = false
     op2.disabled = false
@@ -36,8 +37,9 @@ function algorithm(remainder) {switch (remainder) {
         logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        if (sum == 100) {
+        if (sum >= 100) {
             youLost()
+            
         }
         break
     case 1:
@@ -48,8 +50,9 @@ function algorithm(remainder) {switch (remainder) {
         logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        if (sum == 100) {
+        if (sum >= 100) {
             youLost()
+            
         }
         break
     case 0:
@@ -59,8 +62,9 @@ function algorithm(remainder) {switch (remainder) {
         logs.classList.add('fade-out')
         sumNumber.innerHTML = `${sum}`
         displayOn()
-        if (sum == 100) {
+        if (sum >= 100) {
             youLost()
+            
         }
         break}}
 
@@ -71,7 +75,7 @@ function addOne() {
     sumNumber.innerHTML = `${sum}`
     logs.classList.add('visible')
     logs.classList.remove('fade-out')
-    if (sum >= 100) {
+    if (sum == 100) {
         youWon()
         return
     }
@@ -86,7 +90,7 @@ function addTwo(){
     sumNumber.innerHTML = `${sum}`
     logs.classList.add('visible')
     logs.classList.remove('fade-out')
-    if (sum >= 100) {
+    if (sum == 100) {
         youWon()
         return
    }
@@ -98,35 +102,50 @@ function addTwo(){
 function restart() {
     displayOn()
     sum = 0
-    sumNumber.innerHTML = `
-    ${sum}
-    `
+    sumNumber.innerHTML = `${sum}`
     console.log('restart!')
+    eListener()
+}
+function settings() {
+    overlay.style.display = 'block'
+    console.log('overlay on')
+}
+function closeSetting() {
+    overlay.style.display = 'none'
+    console.log('overlay off')
 }
 
-// function timer() {
-//     var  = timer.value
-// }
 
-document.addEventListener("keydown", function(e) {
-    // console.log(e.keyCode)
+var firstExecution = 0
+var interval = 300
+function eListener() {
+document.addEventListener("keydown", function event(e) {
     e.key.toString()
     if (!e.repeat)
-    console.log(e.key);
-    if (!coolDown && e.key.toString() == 1){
-        addOne()
-        coolDown()
-    }
-    if (!coolDown && e.key.toString() == 2){
-        addTwo()
-        coolDown()
-    }
     
-})
+    var date = new Date();
+    var milliseconds = date.getTime(); 
+    if((milliseconds - firstExecution) > interval){
+        firstExecution = milliseconds;
+    if (e.key.toString() == 1){
+        addOne()
+        
+    }
+    if (e.key.toString() == 2){
+        addTwo()
+        
+    }}
+    if (sum >= 100) {
+        console.log('listener removed')
+        this.removeEventListener("keydown", arguments.callee)
+    }
+})}
+eListener()
 
-function coolDown() {
-    coolDown = true
-    setTimedOut(function() {coolDown = false}, 200)
-}
+// function onCoolDown() {
+//     console.log('you on cool down')
+//     coolDown = true
+//     setTimedOut(function() {coolDown = false}, 200)
+// }
 
 document.getElementById('number').value = sum;

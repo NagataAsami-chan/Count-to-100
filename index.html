@@ -10,16 +10,22 @@
 <body>
     <div >
         <ul class="navbar">
-            <li id="settings">
-                <form action="">
-                    <button style="border: none">
+            <li >
+                
+                    <button id="settings" style="background-color: transparent; border: none;" onclick="settings()">
                         <img src="./img/settings.png" alt="settings" style="height: 34px">
                     </button>
-                </form>
+                
             </li>
         </ul>
     </div>
-    <div class="overlay"></div>
+    <div id="overlay">
+        <div id="close">
+            <button onclick="closeSetting()" style=" background-color: transparent; border: none;">
+                <img src="./img/close-button-png.png" style="height: 34px">
+            </button>
+        </div>
+    </div>
     <div class="content">
         <h1 id="title">The game of 100</h1><h1 id="number">0</h1>
         <div id="logs">Bot Logs</div>
