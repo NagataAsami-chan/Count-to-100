@@ -82,6 +82,7 @@
     transform: translate(-50%, -50%);
     border-radius: 8px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 body {
@@ -142,4 +143,8 @@ body {
     visibility: visible;
     opacity: 1;
     transition: opacity 0s linear;
+}
+
+.input {
+    text-align: center;
 }

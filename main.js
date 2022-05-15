@@ -1,5 +1,6 @@
 var sum = 0
 var sumNumber = document.getElementById('number')
+var responseTime = 200
 
 const op1 = document.getElementById('op1')
 const op2 = document.getElementById('op2')
@@ -7,6 +8,8 @@ const timer = document.getElementById('timer')
 const logs = document.getElementById('logs')
 const setting = document.getElementById('settings')
 const overlay = document.getElementById('overlay')
+
+
 function displayOn() {
     op1.disabled = false
     op2.disabled = false
@@ -80,7 +83,7 @@ function addOne() {
         return
     }
     displayOff()
-    setTimeout(function() {algorithm(remainder)} ,200)
+    setTimeout(function() {algorithm(remainder)} ,responseTime)
 }
 
 // Add two
@@ -95,7 +98,7 @@ function addTwo(){
         return
    }
     displayOff()
-    setTimeout(function() {algorithm(remainder)} ,200)
+    setTimeout(function() {algorithm(remainder)} ,responseTime)
 }
 
 // Restart the game
@@ -117,7 +120,7 @@ function closeSetting() {
 
 
 var firstExecution = 0
-var interval = 300
+var interval = responseTime + 100
 function eListener() {
 document.addEventListener("keydown", function event(e) {
     e.key.toString()
@@ -142,6 +145,12 @@ document.addEventListener("keydown", function event(e) {
 })}
 eListener()
 
+function botResponse() {
+    var inputValue = document.getElementById('input').value
+    responseTime = parseInt(inputValue)
+    console.log(inputValue)
+}
+console.log(document.getElementsByClassName('input').value)
 // function onCoolDown() {
 //     console.log('you on cool down')
 //     coolDown = true
