@@ -8,7 +8,7 @@ const timer = document.getElementById('timer')
 const logs = document.getElementById('logs')
 const setting = document.getElementById('settings')
 const overlay = document.getElementById('overlay')
-
+const devName = document.getElementById('dev')
 
 function displayOn() {
     op1.disabled = false
@@ -149,6 +149,17 @@ function botResponse() {
     var inputValue = document.getElementById('input').value
     responseTime = parseInt(inputValue)
     console.log(inputValue)
+}
+function dev() {
+    devName.innerHTML = `<div id="dev">
+    <br>
+    Discord: <br>
+    Script and algorithm - nani desuka?#5423 
+    <br> JoshywaBoo#9806
+    <br>
+    Background and UI - DressUnicycle60#5438
+    </div>`
+
 }
 console.log(document.getElementsByClassName('input').value)
 // function onCoolDown() {

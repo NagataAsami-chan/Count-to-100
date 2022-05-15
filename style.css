@@ -148,3 +148,12 @@ body {
 .input {
     text-align: center;
 }
+
+#devButton {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#dev {
+    text-align: center;
+    
+}
