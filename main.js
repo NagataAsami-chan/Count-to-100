@@ -155,7 +155,7 @@ function dev() {
     <br>
     Discord: <br>
     Script and algorithm - nani desuka?#5423 
-    <br> JoshywaBoo#9806
+    <br> 
     <br>
     Background and UI - DressUnicycle60#5438
     </div>`
